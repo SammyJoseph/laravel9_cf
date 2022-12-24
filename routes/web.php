@@ -27,9 +27,15 @@ Route::get('/', HomeController::class);
     return "Bienvenido a la página Cursos";
 }); */
 /* La ruta anterior y las dos siguientes ahora usan el controlador CursoController */
-Route::get('cursos', [CursoController::class, 'index']); // index es el método que se encargará de esta ruta
+/* Route::get('cursos', [CursoController::class, 'index']); // index es el método que se encargará de esta ruta
 Route::get('cursos/create', [CursoController::class, 'create']);
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
+Route::get('cursos/{curso}', [CursoController::class, 'show']); */
+/* Agrupar rutas de un mismo controlador */
+Route::controller(CursoController::class)->group(function () {
+    Route::get('cursos', 'index');
+    Route::get('cursos/create', 'create');
+    Route::get('cursos/{curso}', 'show');
+});
 
 // Si la URL contiene crear-curso, se utiliza esta ruta gracias al orden
 /* Route::get('cursos/crear-curso', function () {
