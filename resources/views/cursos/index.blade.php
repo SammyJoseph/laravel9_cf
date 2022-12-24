@@ -34,16 +34,15 @@
                 <img src="https://peruweb.site/cdn/cursos/img/course-1.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Web Development</h4>
+                    <h4>CSS3</h4>
                     <p class="price">$169</p>
                     </div>
-
-                    <h3><a href="course-details.html">Website Design</a></h3>
-                    <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                    <h3><a href="cursos/CSS3">Diseño Web</a></h3>
+                    <p>CSS es un lenguaje de programación utilizado para dar formato y estilo a los documentos HTML de un sitio web.</p>
                     <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                         <img src="https://peruweb.site/cdn/cursos/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                        <span>Antonio</span>
+                        <span>Álvaro Felipe</span>
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
                         <i class="bx bx-user"></i>&nbsp;50
