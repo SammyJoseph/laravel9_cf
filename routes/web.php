@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController; //Controlador de la ruta principal
+use App\Http\Controllers\CursoController; //Controlador de los cursos
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
     // return "Bienvenido a la página Principal";
-});
+}); */
+/* La ruta anterior ahora usa el controlador HomeController */
+Route::get('/', HomeController::class);
 
-Route::get('cursos', function () {
+/* Se utilizará 1 solo controlador para manejar todas las rutas de Cursos */
+/* Route::get('cursos', function () {
     return "Bienvenido a la página Cursos";
-});
+}); */
+/* La ruta anterior y las dos siguientes ahora usan el controlador CursoController */
+Route::get('cursos', [CursoController::class, 'index']); // index es el método que se encargará de esta ruta
+Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/{curso}', [CursoController::class, 'show']);
 
 // Si la URL contiene crear-curso, se utiliza esta ruta gracias al orden
-Route::get('cursos/crear-curso', function () {
+/* Route::get('cursos/crear-curso', function () {
     return "En esta página podrás crear un curso";
-});
+}); */
 
 // En cambio, si la URL recibe otra variable diferente a crear-curso, se asume que es un Curso
 /* Recibir una variable por URL */
@@ -41,11 +50,11 @@ Route::get('cursos/crear-curso', function () {
 
 /* Esta ruta reemplaza a las dos anteriores */
 /* el signo de ? después de categoria_curso indica que es opcional (se debe inicializar en null) */
-Route::get('cursos/{curso}/{categoria_curso?}', function ($curso, $categoria_curso = null) {
+/* Route::get('cursos/{curso}/{categoria_curso?}', function ($curso, $categoria_curso = null) {
     if ($categoria_curso) {
         return "Bienvenido al curso $curso de la categoría $categoria_curso";
     } else {
         return "Bienvenido al curso $curso desde cero";
     }
     
-});
+}); */
