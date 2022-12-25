@@ -7,6 +7,6 @@
     <title>Index</title>
 </head>
 <body>
-    <h3>Bienvenido a la página principal</h3>
+    <h3>Bienvenido a la página principal!</h3>
 </body>
 </html>
