@@ -9,5 +9,5 @@ class Curso extends Model
 {
     use HasFactory;
 
-    protected $table = "users"; // ignora la convención Curso/cursos y ahora administra la tabla users
+    // protected $table = "users"; // ignora la convención Curso/cursos y ahora administra la tabla users
 }
