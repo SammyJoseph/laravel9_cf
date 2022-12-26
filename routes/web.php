@@ -32,9 +32,11 @@ Route::get('cursos/create', [CursoController::class, 'create']);
 Route::get('cursos/{curso}', [CursoController::class, 'show']); */
 /* Agrupar rutas de un mismo controlador */
 Route::controller(CursoController::class)->group(function () {
-    Route::get('cursos', 'index');
-    Route::get('cursos/create', 'create');
-    Route::get('cursos/{curso}', 'show');
+    Route::get('cursos', 'index')->name('c.index');
+    Route::get('cursos/create', 'create')->name('c.create');
+
+    // Route::get('cursos/{curso}', 'show')->name('c.show');
+    Route::get('cursos/{id}', 'show')->name('c.show');
 });
 
 // Si la URL contiene crear-curso, se utiliza esta ruta gracias al orden

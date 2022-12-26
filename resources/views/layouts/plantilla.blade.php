@@ -28,6 +28,8 @@
   <!-- Template Main CSS File -->
   <link href="https://peruweb.site/cdn/cursos/css/style.css?v=0.1" rel="stylesheet">
 
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- =======================================================
   * Template Name: Mentor - v4.10.0
   * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/

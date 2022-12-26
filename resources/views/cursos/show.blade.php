@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', $curso)
+@section('title', 'Curso ' . $curso->name)
 
 @section('main')
 <main id="main">
@@ -8,7 +8,7 @@
     <div class="breadcrumbs" data-aos="fade-in">
     <div class="container">
         {{-- <h2>Detalles del curso <?php /* echo $curso */ ?></h2> --}}
-        <h2>Detalles del curso {{$curso}}</h2> {{-- las dos llaves reemplazan a <php echo $curso ?> --}}
+        <h2>Detalles del curso {{$curso->name}}</h2> {{-- las dos llaves reemplazan a <php echo $curso ?> --}}
         <p>Es una formación en línea que enseña a los estudiantes a usar el lenguaje de estilo en cascada (CSS) para dar formato y estilo a los sitios web.</p>
     </div>
     </div><!-- End Breadcrumbs -->
@@ -18,56 +18,58 @@
     <div class="container" data-aos="fade-up">
 
         <div class="row">
-        <div class="col-lg-8">
-            <img src="https://peruweb.site/cdn/cursos/img/curso-css-portada.jpg" class="img-fluid" alt="">
-            <h3>Bienvenido al curso <?php echo strtoupper($curso) ?></h3>
-            <p>
-            CSS (siglas en inglés de Cascading Style Sheets, o Hojas de Estilo en Cascada en español) es un lenguaje de programación utilizado para dar formato y estilo a los documentos HTML (HyperText Markup Language, o Lenguaje de Marcado de Hipertexto) de un sitio web. Con CSS, puedes controlar aspectos como el color, el tamaño y el tipo de letra de tu sitio web, así como la disposición de los elementos en la página. Utilizar CSS te permite separar el contenido del sitio web (que se escribe en HTML) de su apariencia (que se escribe en CSS), lo que hace que sea más fácil modificar el diseño y el estilo del sitio sin tener que cambiar el contenido.
-            </p>
-        </div>
-        <div class="col-lg-4">
+            <a class="mb-3 text-decoration-underline" href="{{route('c.index')}}">Volver a Cursos</a>
 
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Profesor</h5>
-            <p><a href="#">Walter White</a></p>
+            <div class="col-lg-8">
+                <img src="https://peruweb.site/cdn/cursos/img/curso-css-portada.jpg" class="img-fluid" alt="">
+                <h3>Bienvenido al curso <?php echo strtoupper($curso->name) ?></h3>
+                <p>
+                CSS (siglas en inglés de Cascading Style Sheets, o Hojas de Estilo en Cascada en español) es un lenguaje de programación utilizado para dar formato y estilo a los documentos HTML (HyperText Markup Language, o Lenguaje de Marcado de Hipertexto) de un sitio web. Con CSS, puedes controlar aspectos como el color, el tamaño y el tipo de letra de tu sitio web, así como la disposición de los elementos en la página. Utilizar CSS te permite separar el contenido del sitio web (que se escribe en HTML) de su apariencia (que se escribe en CSS), lo que hace que sea más fácil modificar el diseño y el estilo del sitio sin tener que cambiar el contenido.
+                </p>
             </div>
+            <div class="col-lg-4">
 
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Costo</h5>
-            <p>$165</p>
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Profesor</h5>
+                <p><a href="#">Walter White</a></p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Costo</h5>
+                <p>$165</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Alumnos por sesión</h5>
+                <p>30</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>De Lunes a Viernes</h5>
+                <p>5.00 pm - 7.00 pm</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Duración Total</h5>
+                <p>12 horas</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Fecha de cierre</h5>
+                <p>09/01/23</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Fecha de inicio</h5>
+                <p>03/01/23</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                <h5>Aula Virtual</h5>
+                <p>Clases grabadas disponibles</p>
+                </div>
+
             </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Alumnos por sesión</h5>
-            <p>30</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>De Lunes a Viernes</h5>
-            <p>5.00 pm - 7.00 pm</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Duración Total</h5>
-            <p>12 horas</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Fecha de cierre</h5>
-            <p>09/01/23</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Fecha de inicio</h5>
-            <p>03/01/23</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-            <h5>Aula Virtual</h5>
-            <p>Clases grabadas disponibles</p>
-            </div>
-
-        </div>
         </div>
 
     </div>
