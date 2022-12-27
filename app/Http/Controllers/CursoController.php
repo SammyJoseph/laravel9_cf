@@ -69,15 +69,9 @@ class CursoController extends Controller
             'description'  => 'required|min:10'
         ]);
 
-        // return $request->all();
-        /* $curso->name = $request->name;
-        $curso->category = $request->category;
-        $curso->description = $request->description;
-        $curso->save(); */
         $curso->update($request->all()); // asignación masiva (reemplaza el bloque anterior)
 
-        return redirect()->route('cursos.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
-        // return view('cursos.show', compact('curso')); // solución temporal
+        return redirect()->route('cursos.show', $curso);
     }
 
     public function destroy(Curso $curso){
