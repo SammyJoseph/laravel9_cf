@@ -22,14 +22,23 @@
                             @csrf {{-- token de seguridad para formularios (obligatorio) --}}
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{old('name')}}">
+                                    @error('name')
+                                        <small>*{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="text" class="form-control" name="category" placeholder="Categoría" required value="Backend">
+                                    <input type="text" class="form-control" name="category" placeholder="Categoría" value="{{old('category')}}">
+                                    @error('category')
+                                        <small>*{{$message}}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="description" rows="5" placeholder="Descripción" required>Duis a est vehicula, vehicula ipsum sed, consectetur ipsum. Sed rutrum mi vitae congue lobortis.</textarea>
+                                <textarea class="form-control" name="description" rows="5" placeholder="Descripción">{{old('description')}}</textarea>
+                                @error('description')
+                                    <small>*{{$message}}</small>
+                                @enderror
                             </div>
                             {{-- <div class="my-3">
                                 <div class="loading">Loading</div>

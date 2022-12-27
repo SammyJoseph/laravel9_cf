@@ -23,14 +23,23 @@
                             @method('put') {{-- cambia el POST por PUT --}}
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre" required value="{{$curso->name}}">
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{old('name', $curso->name)}}">
+                                    @error('name')
+                                        <small>*{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="text" class="form-control" name="category" placeholder="Categoría" required value="{{$curso->category}}">
+                                    <input type="text" class="form-control" name="category" placeholder="Categoría" value="{{old('category', $curso->category)}}">
+                                    @error('category')
+                                        <small>*{{$message}}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="description" rows="5" placeholder="Descripción" required>{{$curso->description}}</textarea>
+                                <textarea class="form-control" name="description" rows="5" placeholder="Descripción">{{old('description', $curso->description)}}</textarea>
+                                @error('description')
+                                    <small>*{{$message}}</small>
+                                @enderror
                             </div>
                             {{-- <div class="my-3">
                                 <div class="loading">Loading</div>

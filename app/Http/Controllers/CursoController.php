@@ -30,6 +30,13 @@ class CursoController extends Controller
     }
 
     public function store(Request $request){ // Request almacena la información del formulario en un objeto
+        /* Validación de formulario */
+        $request->validate([
+            'name'  => 'required',
+            'category'  => 'required',
+            'description'  => 'required'
+        ]);
+
         // return $request->all();
 
         $curso = new Curso();
@@ -53,6 +60,12 @@ class CursoController extends Controller
     }
 
     public function update(Request $request, Curso $curso){
+        $request->validate([
+            'name'  => 'required|max:15',
+            'category'  => 'required|max:15',
+            'description'  => 'required|min:10'
+        ]);
+
         // return $request->all();
         $curso->name = $request->name;
         $curso->category = $request->category;
