@@ -15,12 +15,14 @@
         <div class="container" data-aos="fade-up">
             <a class="text-decoration-underline" href="{{route('cursos.create')}}">Crear un nuevo curso</a>
             <ul class="mt-2"> 
-                @foreach ($cursos as $c)
+                @foreach ($cursos as $curso)
                 <li>
                     {{-- <a href="cursos/{{$c->name}}"> --}}
                     {{-- <a href="{{route('cursos.show', $c->id)}}"> --}}
-                    <a href="{{route('cursos.show', $cursos)}}">
-                        {{$c->name}}
+                    {{-- <a href="{{route('cursos.show', $cursos)}}"> --}}
+                    {{-- <a href="{{$c->slug}}"> --}}
+                    <a href="{{route('cursos.show', $curso)}}">
+                        {{$curso->name}}
                     </a>
                 </li>
                 @endforeach

@@ -54,7 +54,8 @@ class CursoController extends Controller
         ]);
         $curso = Curso::create($request->all()); // asignación masiva... reemplaza dinámicamente el bloque anterior (crea el objeto y luego save())... se debe agregar la propiedad $fillable en el modelo Curso
 
-        return redirect()->route('cursos.show', $curso->slug); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        // return $curso->slug;
+        return redirect()->route('cursos.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
 
