@@ -39,8 +39,8 @@ class CursoController extends Controller
         // return $curso;
 
         $curso->save();
-        // return redirect()->route('c.store', $curso->id); // error por solucionar 
-        return view('cursos.show', compact('curso')); // solución temporal
+        return redirect()->route('c.show', $curso->id); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        // return view('cursos.show', compact('curso')); // solución temporal
     }
 
     /* public function edit($id){
@@ -59,7 +59,7 @@ class CursoController extends Controller
         $curso->description = $request->description;
 
         $curso->save();
-        // return redirect()->route('c.show', $curso); // error por solucionar 
-        return view('cursos.show', compact('curso'));
+        return redirect()->route('c.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        // return view('cursos.show', compact('curso')); // solución temporal
     }
 }
