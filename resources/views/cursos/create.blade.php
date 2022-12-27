@@ -26,6 +26,7 @@
                                     @error('name')
                                         <small>*{{$message}}</small>
                                     @enderror
+                                    <input type="hidden" name="slug" value="slug">
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="text" class="form-control" name="category" placeholder="Categoría" value="{{old('category')}}">

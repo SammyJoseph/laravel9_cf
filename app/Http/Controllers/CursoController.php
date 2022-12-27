@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCurso;
+use Illuminate\Support\Str;
 
 class CursoController extends Controller
 {
@@ -47,9 +48,13 @@ class CursoController extends Controller
         $curso->description = $request->description;
         // return $curso;
         $curso->save(); */
+        
+        $request->merge([ 
+            'slug' => Str::slug($request->name), // agregar slug
+        ]);
         $curso = Curso::create($request->all()); // asignación masiva... reemplaza dinámicamente el bloque anterior (crea el objeto y luego save())... se debe agregar la propiedad $fillable en el modelo Curso
 
-        return redirect()->route('cursos.show', $curso->id); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        return redirect()->route('cursos.show', $curso->slug); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
 
@@ -67,6 +72,10 @@ class CursoController extends Controller
             'name'  => 'required|max:15',
             'category'  => 'required|max:15',
             'description'  => 'required|min:10'
+        ]);
+
+        $request->merge([ 
+            'slug' => Str::slug($request->name), // agregar slug
         ]);
 
         $curso->update($request->all()); // asignación masiva (reemplaza el bloque anterior)
