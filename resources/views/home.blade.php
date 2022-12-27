@@ -7,7 +7,7 @@
     <title>Index</title>
 </head>
 <body>
-    <h3>Bienvenido a la página principal 2.1!</h3>
+    <h3>Bienvenido a la página principal 2.2!</h3>
     <a href="{{route('c.index')}}">Ver cursos</a>
 </body>
 </html>

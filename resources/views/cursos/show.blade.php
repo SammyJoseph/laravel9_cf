@@ -19,6 +19,7 @@
 
         <div class="row">
             <a class="mb-3 text-decoration-underline" href="{{route('c.index')}}">Volver a Cursos</a>
+            <a class="mb-3 text-decoration-underline" href="{{route('c.edit', $curso)}}">Editar curso</a>
 
             <div class="col-lg-8">
                 <img src="https://peruweb.site/cdn/cursos/img/curso-css-portada.jpg" class="img-fluid" alt="">

@@ -125,7 +125,7 @@
   <script src="https://peruweb.site/cdn/cursos/vendor/aos/aos.js"></script>
   <script src="https://peruweb.site/cdn/cursos/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://peruweb.site/cdn/cursos/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://peruweb.site/cdn/cursos/vendor/php-email-form/validate.js"></script>
+  {{-- <script src="https://peruweb.site/cdn/cursos/vendor/php-email-form/validate.js"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="https://peruweb.site/cdn/cursos/js/main.js"></script>
