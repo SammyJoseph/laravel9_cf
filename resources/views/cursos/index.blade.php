@@ -17,10 +17,6 @@
             <ul class="mt-2"> 
                 @foreach ($cursos as $curso)
                 <li>
-                    {{-- <a href="cursos/{{$c->name}}"> --}}
-                    {{-- <a href="{{route('cursos.show', $c->id)}}"> --}}
-                    {{-- <a href="{{route('cursos.show', $cursos)}}"> --}}
-                    {{-- <a href="{{$c->slug}}"> --}}
                     <a href="{{route('cursos.show', $curso)}}">
                         {{$curso->name}}
                     </a>
