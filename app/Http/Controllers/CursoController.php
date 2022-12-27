@@ -10,7 +10,7 @@ class CursoController extends Controller
 {
     public function index(){ // el nombre de los métodos por convención
         // $cursos = Curso::all();
-        $cursos = Curso::orderBy('id', 'desc')->paginate(5); // muestra 15 (por defecto) registros en lugar de todos
+        $cursos = Curso::orderBy('id', 'desc')->paginate(10); // muestra 15 (por defecto) registros en lugar de todos
 
         return view('cursos.index', compact('cursos'));
     }
@@ -78,5 +78,10 @@ class CursoController extends Controller
 
         return redirect()->route('c.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
+    }
+
+    public function destroy(Curso $curso){
+        $curso->delete();
+        return redirect()->route('c.index');
     }
 }

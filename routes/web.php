@@ -42,6 +42,8 @@ Route::controller(CursoController::class)->group(function () {
 
     Route::get('cursos/{curso}/edit', 'edit')->name('c.edit'); // carga la el curso a editar en el formulario
     Route::put('cursos/{curso}', 'update')->name('c.update');
+
+    Route::delete('cursos/{curso}', 'destroy')->name('c.destroy');
 });
 
 // Si la URL contiene crear-curso, se utiliza esta ruta gracias al orden

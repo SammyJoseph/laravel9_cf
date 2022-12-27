@@ -20,6 +20,11 @@
         <div class="row">
             <a class="mb-3 text-decoration-underline" href="{{route('c.index')}}">Volver a Cursos</a>
             <a class="mb-3 text-decoration-underline" href="{{route('c.edit', $curso)}}">Editar curso</a>
+            <form action="{{route('c.destroy', $curso)}}" method="POST">
+                @csrf
+                @method('delete')
+                <button type="submit" class="mb-3 text-decoration-underline">Eliminar curso</button>
+            </form>
 
             <div class="col-lg-8">
                 <img src="https://peruweb.site/cdn/cursos/img/curso-css-portada.jpg" class="img-fluid" alt="">
