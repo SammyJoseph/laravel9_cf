@@ -9,7 +9,7 @@
     <div class="container">
         {{-- <h2>Detalles del curso <?php /* echo $curso */ ?></h2> --}}
         <h2>Detalles del curso {{$curso->name}}</h2> {{-- las dos llaves reemplazan a <php echo $curso ?> --}}
-        <p>Es una formación en línea que enseña a los estudiantes a usar el lenguaje de estilo en cascada (CSS) para dar formato y estilo a los sitios web.</p>
+        <p>{{$curso->description}}</p>
     </div>
     </div><!-- End Breadcrumbs -->
 

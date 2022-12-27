@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCurso;
 
 class CursoController extends Controller
 {
@@ -29,23 +30,25 @@ class CursoController extends Controller
         return view('cursos.show', compact('curso'));
     }
 
-    public function store(Request $request){ // Request almacena la información del formulario en un objeto
-        /* Validación de formulario */
-        $request->validate([
-            'name'  => 'required',
-            'category'  => 'required',
-            'description'  => 'required'
-        ]);
+    // public function store(Request $request){ // Request almacena la información del formulario en un objeto
+    public function store(StoreCurso $request){ // Cambió de Request a StoreCurso para validaciones pero funciona igual
+        /* Validación de formulario (se movió a StoreCurso)*/
+        /* $request->validate([
+            'name'  => 'required|max:15',
+            'category'  => 'required|max:15',
+            'description'  => 'required|min:10'
+        ]); */
 
         // return $request->all();
 
-        $curso = new Curso();
+        /* $curso = new Curso();
         $curso->name = $request->name;
         $curso->category = $request->category;
         $curso->description = $request->description;
         // return $curso;
+        $curso->save(); */
+        $curso = Curso::create($request->all()); // asignación masiva... reemplaza dinámicamente el bloque anterior (crea el objeto y luego save())... se debe agregar la propiedad $fillable en el modelo Curso
 
-        $curso->save();
         return redirect()->route('c.show', $curso->id); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
@@ -67,11 +70,12 @@ class CursoController extends Controller
         ]);
 
         // return $request->all();
-        $curso->name = $request->name;
+        /* $curso->name = $request->name;
         $curso->category = $request->category;
         $curso->description = $request->description;
+        $curso->save(); */
+        $curso->update($request->all()); // asignación masiva (reemplaza el bloque anterior)
 
-        $curso->save();
         return redirect()->route('c.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
