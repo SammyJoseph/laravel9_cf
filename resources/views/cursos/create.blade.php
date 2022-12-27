@@ -15,10 +15,10 @@
         <section class="contact">
             <div class="container" data-aos="fade-up">
                 <div class="row mt-5 justify-content-center">
-                    <a class="mb-3 text-decoration-underline text-center" href="{{route('c.index')}}">Volver a Cursos</a>
+                    <a class="mb-3 text-decoration-underline text-center" href="{{route('cursos.index')}}">Volver a Cursos</a>
 
                     <div class="col-lg-5 mt-5 mt-lg-0">
-                        <form action="{{route('c.store')}}" method="POST" class="php-email-form">
+                        <form action="{{route('cursos.store')}}" method="POST" class="php-email-form">
                             @csrf {{-- token de seguridad para formularios (obligatorio) --}}
                             <div class="row">
                                 <div class="col-md-6 form-group">

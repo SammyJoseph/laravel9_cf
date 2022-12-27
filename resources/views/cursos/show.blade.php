@@ -18,9 +18,9 @@
     <div class="container" data-aos="fade-up">
 
         <div class="row">
-            <a class="mb-3 text-decoration-underline" href="{{route('c.index')}}">Volver a Cursos</a>
-            <a class="mb-3 text-decoration-underline" href="{{route('c.edit', $curso)}}">Editar curso</a>
-            <form action="{{route('c.destroy', $curso)}}" method="POST">
+            <a class="mb-3 text-decoration-underline" href="{{route('cursos.index')}}">Volver a Cursos</a>
+            <a class="mb-3 text-decoration-underline" href="{{route('cursos.edit', $curso)}}">Editar curso</a>
+            <form action="{{route('cursos.destroy', $curso)}}" method="POST">
                 @csrf
                 @method('delete')
                 <button type="submit" class="mb-3 text-decoration-underline">Eliminar curso</button>

@@ -15,61 +15,18 @@ use App\Http\Controllers\CursoController; //Controlador de los cursos
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-    // return "Bienvenido a la página Principal";
-}); */
-/* La ruta anterior ahora usa el controlador HomeController */
 Route::get('/', HomeController::class);
 
-/* Se utilizará 1 solo controlador para manejar todas las rutas de Cursos */
-/* Route::get('cursos', function () {
-    return "Bienvenido a la página Cursos";
-}); */
-/* La ruta anterior y las dos siguientes ahora usan el controlador CursoController */
-/* Route::get('cursos', [CursoController::class, 'index']); // index es el método que se encargará de esta ruta
-Route::get('cursos/create', [CursoController::class, 'create']);
-Route::get('cursos/{curso}', [CursoController::class, 'show']); */
-/* Agrupar rutas de un mismo controlador */
-Route::controller(CursoController::class)->group(function () {
+/* Agrupar rutas del Curso */
+/* Route::controller(CursoController::class)->group(function () {
     Route::get('cursos', 'index')->name('c.index');
     Route::get('cursos/create', 'create')->name('c.create');
-
-    // Route::get('cursos/{curso}', 'show')->name('c.show');
     Route::get('cursos/{id}', 'show')->name('c.show');
-
     Route::post('cursos', 'store')->name('c.store'); // ruta para guardar el formulario en la BD
-
     Route::get('cursos/{curso}/edit', 'edit')->name('c.edit'); // carga la el curso a editar en el formulario
     Route::put('cursos/{curso}', 'update')->name('c.update');
-
     Route::delete('cursos/{curso}', 'destroy')->name('c.destroy');
-});
-
-// Si la URL contiene crear-curso, se utiliza esta ruta gracias al orden
-/* Route::get('cursos/crear-curso', function () {
-    return "En esta página podrás crear un curso";
 }); */
-
-// En cambio, si la URL recibe otra variable diferente a crear-curso, se asume que es un Curso
-/* Recibir una variable por URL */
-/* Route::get('cursos/{curso}', function ($curso) {
-    return "Bienvenido al curso $curso desde cero";
-}); */
-
-/* Recibe dos variables */
-/* Route::get('cursos/{categoria_curso}/{curso}', function ($categoria_curso, $curso) {
-    return "Bienvenido al curso $curso de la categoría $categoria_curso";
-});
- */
-
-/* Esta ruta reemplaza a las dos anteriores */
-/* el signo de ? después de categoria_curso indica que es opcional (se debe inicializar en null) */
-/* Route::get('cursos/{curso}/{categoria_curso?}', function ($curso, $categoria_curso = null) {
-    if ($categoria_curso) {
-        return "Bienvenido al curso $curso de la categoría $categoria_curso";
-    } else {
-        return "Bienvenido al curso $curso desde cero";
-    }
-    
-}); */
+Route::resource('cursos', CursoController::class); // route resource reemplaza todas las rutas anteriores de Curso siguiendo las convenciones
+// Route::resource('cursitos', CursoController::class)->names('cursos'); // cambia las url pero deja el nombre de las rutas en 'cursos'
+// Route::resource('cursitos', CursoController::class)->parameter('cursitos', 'curso')->names('cursos'); // parameter() indica el nombre de la variable

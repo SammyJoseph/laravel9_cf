@@ -49,7 +49,7 @@ class CursoController extends Controller
         $curso->save(); */
         $curso = Curso::create($request->all()); // asignación masiva... reemplaza dinámicamente el bloque anterior (crea el objeto y luego save())... se debe agregar la propiedad $fillable en el modelo Curso
 
-        return redirect()->route('c.show', $curso->id); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        return redirect()->route('cursos.show', $curso->id); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
 
@@ -76,12 +76,12 @@ class CursoController extends Controller
         $curso->save(); */
         $curso->update($request->all()); // asignación masiva (reemplaza el bloque anterior)
 
-        return redirect()->route('c.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
+        return redirect()->route('cursos.show', $curso); // error por solucionar (en la laptop sí funciona wtf! -> la extensión live reload)
         // return view('cursos.show', compact('curso')); // solución temporal
     }
 
     public function destroy(Curso $curso){
         $curso->delete();
-        return redirect()->route('c.index');
+        return redirect()->route('cursos.index');
     }
 }

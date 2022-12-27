@@ -13,12 +13,12 @@
         <!-- ======= Courses Section ======= -->
         <section id="courses" class="courses">
         <div class="container" data-aos="fade-up">
-            <a class="text-decoration-underline" href="{{route('c.create')}}">Crear un nuevo curso</a>
+            <a class="text-decoration-underline" href="{{route('cursos.create')}}">Crear un nuevo curso</a>
             <ul class="mt-2"> 
                 @foreach ($cursos as $c)
                 <li>
                     {{-- <a href="cursos/{{$c->name}}"> --}}
-                    <a href="{{route('c.show', $c->id)}}">
+                    <a href="{{route('cursos.show', $c->id)}}">
                         {{$c->name}}
                     </a>
                 </li>
