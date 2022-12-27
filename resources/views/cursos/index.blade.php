@@ -19,7 +19,7 @@
                 <li>
                     {{-- <a href="cursos/{{$c->name}}"> --}}
                     {{-- <a href="{{route('cursos.show', $c->id)}}"> --}}
-                    <a href="{{route('cursos.show', $c)}}">
+                    <a href="{{route('cursos.show', $curso)}}">
                         {{$c->name}}
                     </a>
                 </li>
