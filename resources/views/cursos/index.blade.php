@@ -18,13 +18,14 @@
                 @foreach ($cursos as $c)
                 <li>
                     {{-- <a href="cursos/{{$c->name}}"> --}}
-                    <a href="{{route('cursos.show', $c->id)}}">
+                    {{-- <a href="{{route('cursos.show', $c->id)}}"> --}}
+                    <a href="{{route('cursos.show', $c)}}">
                         {{$c->name}}
                     </a>
                 </li>
                 @endforeach
             </ul>
-            {{$cursos->links()}}
+            {{$cursos->links()}} {{-- paginación --}}
 
             <div class="row mt-5" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">

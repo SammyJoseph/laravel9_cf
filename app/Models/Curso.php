@@ -17,4 +17,9 @@ class Curso extends Model
     
     protected $guarded = []; // por lógica, hace lo mismo que la propiedad anterior
     // protected $guarded = ['status']; // lo contrario de la propieda anterior (ignora los campos obvios pero protege los que se indican)
+
+    public function getRouteKeyName() // sobreescribe el método del Model
+    {
+        return 'slug';
+    }
 }
