@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(CursoSeeder::class);
         User::factory(10)->create();
-        Curso::factory(50)->create(); // llenar con 50 elementos de la fábrica CursoFactory
+        Curso::factory(20)->create(); // llenar con 50 elementos de la fábrica CursoFactory
     }
 }

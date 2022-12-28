@@ -17,12 +17,12 @@ class CursoFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->sentence();
+        $name = $this->faker->sentence(3);
         return [
             'name' => $name,
+            'slug' => Str::slug($name, '-'),
             'description' => $this->faker->paragraph(),
             'category' => $this->faker->randomElement(['Frontend', 'Backend']),
-            'slug' => Str::slug($name, '-')
         ];
     }
 }
