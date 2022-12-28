@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Crear un nuevo curso')
+@section('title', 'Editar curso')
 
 @section('main')
     <main id="main">

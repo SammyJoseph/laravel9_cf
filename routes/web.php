@@ -15,18 +15,8 @@ use App\Http\Controllers\CursoController; //Controlador de los cursos
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
-/* Agrupar rutas del Curso */
-/* Route::controller(CursoController::class)->group(function () {
-    Route::get('cursos', 'index')->name('c.index');
-    Route::get('cursos/create', 'create')->name('c.create');
-    Route::get('cursos/{id}', 'show')->name('c.show');
-    Route::post('cursos', 'store')->name('c.store'); // ruta para guardar el formulario en la BD
-    Route::get('cursos/{curso}/edit', 'edit')->name('c.edit'); // carga la el curso a editar en el formulario
-    Route::put('cursos/{curso}', 'update')->name('c.update');
-    Route::delete('cursos/{curso}', 'destroy')->name('c.destroy');
-}); */
-Route::resource('cursos', CursoController::class); // route resource reemplaza todas las rutas anteriores de Curso siguiendo las convenciones
-// Route::resource('cursitos', CursoController::class)->names('cursos'); // cambia las url pero deja el nombre de las rutas en 'cursos'
-// Route::resource('cursitos', CursoController::class)->parameter('cursitos', 'curso')->names('cursos'); // parameter() indica el nombre de la variable
+Route::resource('cursos', CursoController::class); // route resource reemplaza todas las rutas anteriores de Curso siguiendo las convencione
+
+Route::view('nosotros', 'about')->name('about');

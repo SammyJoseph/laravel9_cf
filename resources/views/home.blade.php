@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h3>Bienvenido a la página principal 2.2!</h3>
-    <a href="{{route('cursos.index')}}">Ver cursos</a>
-</body>
-</html>
+@extends('layouts.plantilla')
+@section('title', 'Inicio')
+
+@section('main')
+    <div class="container">
+        <h3>Bienvenido a la página principal 2.2!</h3>
+        <a href="{{route('cursos.index')}}" class="text-decoration-underline">Ver cursos</a>
+    </div> 
+@endsection
