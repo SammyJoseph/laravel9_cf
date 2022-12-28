@@ -14,14 +14,16 @@ class ContactMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $contacto;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contacto) /* recibe el $request desde store() de ContactController */
     {
-        //
+        $this->contacto = $contacto;
     }
 
     /**
@@ -32,7 +34,7 @@ class ContactMailable extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Contact Mailable',
+            subject: 'Desde Laravel',
         );
     }
 

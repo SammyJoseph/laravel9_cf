@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; //Controlador de la ruta principal
 use App\Http\Controllers\CursoController; //Controlador de los cursos
-use App\Mail\ContactMailable;
-use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +22,6 @@ Route::resource('cursos', CursoController::class); // route resource reemplaza t
 
 Route::view('nosotros', 'about')->name('about');
 
-Route::get('contact', function () {
-    $correo = new ContactMailable;
-    Mail::to('sam.tab.paz@gmail.com')->send($correo);
+Route::get('contacto', [ContactController::class, 'index'])->name('contact.index');
 
-    return 'Mensaje enviado';
-});
+Route::post('contacto', [ContactController::class, 'store'])->name('contact.store');

@@ -26,7 +26,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="courses.html" class="get-started-btn">Abrir Chat</a>
+      <a href="{{route('contact.index')}}" class="get-started-btn">Contacto</a>
 
     </div>
 </header><!-- End Header -->
